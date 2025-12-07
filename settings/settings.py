@@ -99,7 +99,7 @@ AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
-LOGIN_REDIRECT_URL = "task_list"
+LOGIN_REDIRECT_URL = "blog_list"
 LOGOUT_REDIRECT_URL = "account_login"
 
 ACCOUNT_LOGIN_METHODS = {"email", "username"}
