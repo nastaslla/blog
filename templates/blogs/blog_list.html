@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Блог{% endblock %}
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3">Все записи</h1>
+    <a href="{% url 'blog_create' %}" class="btn btn-primary">Новая запись</a>
+</div>
+
+<div class="list-group">
+    {% for post in posts %}
+    <a href="{% url 'blog_edit' post.pk %}" class="list-group-item list-group-item-action">
+        <h5 class="mb-1">{{ post.title }}</h5>
+        <p class="mb-1">{{ post.text|truncatewords:20 }}</p>
+        <small>{{ post.date_added }}</small>
+    </a>
+    {% empty %}
+    <p>Записей пока нет.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

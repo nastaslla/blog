@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Запись{% endblock %}
+{% block content %}
+
+<h1 class="h3 mb-3">Запись</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Заголовок</label>
+        {{ form.title }}
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Текст</label>
+        {{ form.text }}
+    </div>
+
+    <button class="btn btn-primary">Сохранить</button>
+    <a href="{% url 'blog_list' %}" class="btn btn-secondary">Назад</a>
+</form>
+
+{% endblock %}
